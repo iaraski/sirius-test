@@ -1,11 +1,10 @@
-import './App.css';
+import ChipList from '../widgets/chip-list/ui/chip-list';
+import './styles/App.css';
 
 function App() {
   return (
     <>
-      <div>
-        <p>Привет</p>
-      </div>
+      <ChipList />
     </>
   );
 }
