@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: relative;
+}
+
+.moreWrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  width: 300px;
+  right: 0;
+  background: #1a1a1a;
+  border: 1px solid #ccc;
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  z-index: 100;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  margin-top: 8px;
+}
+
+.measureContainer {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+  height: 0;
+  overflow: hidden;
+}
+
+.measureInner {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+}

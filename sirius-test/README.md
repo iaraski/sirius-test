@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# Chips List Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+Компонент отображает список чипсов (Chips) в одну строку. Если элементы не помещаются по ширине,
+лишние чипсы скрываются и доступны через попап по клику на кнопку "...". Компонент адаптируется к
+изменению ширины экрана, поддерживает выбор чипса по клику и может быть переиспользован. Каждый чипс
+также может быть использован отдельно от списка.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Список](../p-1.png) ![Попап с чипсами](../p-2.png)
 
-## React Compiler
+## Технологии
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- TypeScript
+- React
+- Для отображения попапа разрешено использовать сторонние библиотеки
 
-## Expanding the ESLint configuration
+## Запуск проекта
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Клонируйте репозиторий:
+   ```sh
+   git clone <ссылка_на_репозиторий>
+   cd <папка_проекта>
+   ```
+2. Установите зависимости:
+   ```sh
+   npm install
+   ```
+3. Запустите проект:
+   ```sh
+   npm run dev
+   ```
+4. Откройте в браузере [http://localhost:5173](http://localhost:5173)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Структура
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- `src/widgets/chip-list` — компонент списка чипсов
+- `src/shared/ui/Chips.tsx` — отдельный чипс
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Возможности
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Чипсы в одну строку, лишние — в попапе
+- Адаптация к ширине экрана
+- Выбор чипса по клику
+- Переиспользуемость компонентов

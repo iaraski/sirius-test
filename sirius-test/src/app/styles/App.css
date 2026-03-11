@@ -1,3 +1,24 @@
-#root {
-  margin: 0 auto;
+.chips {
+  padding: 0.4em 1em;
+  margin: 0 2px;
+  border-radius: 16px;
+  border: 1px solid #646cff;
+  background: #222;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border 0.2s;
+}
+.chips.active {
+  background: #646cff;
+  color: #fff;
+  border-color: #fff;
+}
+.chips:hover {
+  background: #646cff;
+  color: #fff;
+  border-color: #fff;
 }
